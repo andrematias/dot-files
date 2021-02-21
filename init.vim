@@ -1,0 +1,5 @@
+source $HOME/.config/nvim/plugins/list.vim
+source $HOME/.config/nvim/plugins/settings.vim
+source $HOME/.config/nvim/general/settings.vim
+source $HOME/.config/nvim/general/paths.vim
+source $HOME/.config/nvim/keys/mappings.vim
