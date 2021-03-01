@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " List of plugins
+Plug 'joshdick/onedark.vim'
 Plug 'chun-yang/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'

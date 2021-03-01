@@ -31,7 +31,7 @@ set ttyfast                             " Set fast scroll
 set autoread
 set termguicolors
 
-colorscheme onehalfdark
+colorscheme onedark
 " Color scheme
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
