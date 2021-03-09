@@ -32,6 +32,8 @@ let g:coc_global_extensions = [
 \ 'coc-omnisharp',
 \ 'coc-sql',
 \ 'coc-db',
+\ 'coc-python',
+\ 'coc-jedi',
 \ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
