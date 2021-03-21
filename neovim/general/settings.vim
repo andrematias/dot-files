@@ -29,7 +29,6 @@ set autochdir                           " Your working directory will always be 
 set background=dark                     " tell vim what the background color looks like
 set ttyfast                             " Set fast scroll
 set autoread
-set termguicolors
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
@@ -56,3 +55,9 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2'
 " You can't stop me
 cmap w!! w !sudo tee %
 
+" Enable true color 启用终端24位色
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
