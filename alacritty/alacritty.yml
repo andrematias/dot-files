@@ -1,0 +1,85 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 125
+    lines: 35
+
+  padding:
+    x: 0
+    y: 0
+
+  decorations: full
+
+  startup_mode: Windowed
+
+  title: 'Matias Terminal'
+
+  # Window class (Linux/BSD only):
+  class:
+    instance: Alacritty
+
+  # GTK theme variant (Linux/BSD only)
+  gtk_theme_variant: dark
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: Fira Code
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: Fira Code
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: Fira Code
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: Fira Code
+    style: Bold Italic
+
+  # Point size
+  size: 11.0
+
+# Shell
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+
+mouse:
+  url:
+    launcher:
+      program: xdg-open
+      args: []
+
+# Mouse bindings
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+# Key bindings
+key_bindings:
+  - { key: Paste,                                       action: Paste          }
+  - { key: Copy,                                        action: Copy           }
+  - { key: L,         mods: Control,                    action: ClearLogNotice }
+  - { key: L,         mods: Control, mode: ~Vi,         chars: "\x0c"          }
+  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
+  - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
+  - { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
+  - { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+
