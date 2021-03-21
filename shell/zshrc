@@ -1,0 +1,29 @@
+# export variables
+export ZSH="/home/matias/.oh-my-zsh"
+export TERM=screen-256color
+export NVM_DIR="$HOME/.nvm"
+export PATH="$PATH:/home/matias/.dotnet/tools"
+export PATH="$PATH:$(yarn global bin)"
+
+# theme
+ZSH_THEME="robbyrussell"
+
+DISABLE_AUTO_UPDATE="false"
+DISABLE_AUTO_TITLE="true"
+
+plugins=(archlinux zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+
+# Custom aliases
+alias zshconf="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias info="screenfetch"
+alias "c=xclip"
+alias "v=xclip -o"
+
+# node version manager
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# auto-load tmux
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session;}
