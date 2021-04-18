@@ -9,7 +9,7 @@ function! NERDTreeToggleInCurDir()
 endfunction
 nmap <C-f> :call NERDTreeToggleInCurDir()<CR>
 
-let NERDTreeIgnore=['\.swp$', '\.pyc$', '__pycache__']
+let NERDTreeIgnore=['\.swp$', '\.pyc$', '__pycache__', 'bin', 'obj']
 let g:NERDTreeChDirMode = 2
 
 
