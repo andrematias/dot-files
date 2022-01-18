@@ -35,38 +35,32 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Regular
 
   # Bold font face
   bold:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 16.0
 
 # Shell
 shell:
-  program: /bin/zsh
+  program: /bin/bash
   args:
     - --login
-
-mouse:
-  url:
-    launcher:
-      program: xdg-open
-      args: []
 
 # Mouse bindings
 mouse_bindings:

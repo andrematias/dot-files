@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+FLAGS=${${${${${${1//\!/}//\~/}//\#/}//Z/}//\-/}//\*/}
+
+# And then, if needed, we prepend the "last window" flag since
+# I want it to be right after the window title
+if [[ "$1" =~ "-" ]]; then
+    FLAGS="●${FLAGS}"
+fi
+
+echo ${FLAGS}

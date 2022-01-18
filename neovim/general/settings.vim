@@ -15,10 +15,11 @@ set conceallevel=0
 set laststatus=2
 set number
 set relativenumber
-set cursorline
-set showtabline=2
+set nocursorline
+set showtabline=1
 set nobackup
 set nowritebackup
+set noshowmode
 set updatetime=300
 set timeoutlen=500
 set formatoptions-=cro
@@ -42,9 +43,8 @@ set expandtab
 set viminfo='25,\"50,n~/.viminfo
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
-set termguicolors
 syntax enable
-colorscheme github_dark
+colorscheme gruvbox
 
 " Auto commands
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -52,3 +52,9 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascriptreact setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
