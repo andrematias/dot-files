@@ -1,0 +1,6 @@
+#! /bin/zsh
+export EDITOR=nvim
+export QT_QPA_PLATFORMTHEME=gtk3
+export PATH=$HOME/.local/bin:$PATH
+export FZF_DEFAULT_OPTS='--reverse'
+

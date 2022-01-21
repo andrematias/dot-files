@@ -1,0 +1,7 @@
+#! /bin/zsh
+alias vim="sudo -sE nvim"
+alias sudo="sudo -sE"
+alias cat="bat"
+alias em="sudo -sE emerge"
+alias emerge="sudo -sE emerge"
+alias remote="xfreerdp /timeout:36000 /d:lmcorp /dynamic-resolution /log-level:FATAL /cert:ignore +home-drive +clipboard"
