@@ -52,13 +52,13 @@ map <F5> :e!<CR>
 " Quit current buffer and go to previous one
 map <leader>q :bd<CR>
 
-" Goyo
-map <leader>g :Goyo<CR>
-map <leader>gg :Goyo!<CR>
-
 " Fold and Unfold
 inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 cmap w!! w !sudo tee %
+
+" fzf map
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>f :Files<CR>
