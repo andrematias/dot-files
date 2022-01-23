@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    startx
+fi
+
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+
+if [ -f /usr/local/bin/bcat ]; then
+    bcat
+fi
