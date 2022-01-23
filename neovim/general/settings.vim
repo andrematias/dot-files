@@ -27,7 +27,7 @@ set clipboard=unnamedplus
 set autochdir
 set ttyfast
 set autoread
-set foldmethod=indent
+set foldmethod=manual
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
