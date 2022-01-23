@@ -16,7 +16,7 @@ set laststatus=2
 set number
 set relativenumber
 set nocursorline
-set showtabline=1
+set showtabline=2
 set nobackup
 set nowritebackup
 set noshowmode
