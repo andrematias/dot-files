@@ -2,6 +2,8 @@
 call plug#begin('~/.vim/plugged')
 
 " List of plugins
+Plug 'reedes/vim-pencil'
+Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'jalvesaq/zotcite'
