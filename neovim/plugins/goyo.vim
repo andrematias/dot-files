@@ -5,8 +5,8 @@ function! s:goyo_enter()
   set scrolloff=999
   set wrap
   set conceallevel=0
-  set number
-  set relativenumber
+  set nonumber
+  set norelativenumber
   PencilToggle
 endfunction
 
