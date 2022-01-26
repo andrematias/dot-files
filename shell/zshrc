@@ -8,5 +8,5 @@ plugins=(git fzf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-eval `keychain --quiet --agents ssh --eval id_rsa`
-
+keychain --quiet --agents ssh id_rsa ~/.ssh/github
+source ~/.keychain/${HOST}-sh
