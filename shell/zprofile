@@ -8,7 +8,9 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+# curl -s -g GET 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT' | jq .price | xargs cowsay -r
+#
 
-if [ -f /usr/local/bin/bcat ]; then
-    bcat
-fi
+zet() {
+    cd ${HOME}/Documents/zettel && fzf | xargs -r -I % ${EDITOR} %
+}
