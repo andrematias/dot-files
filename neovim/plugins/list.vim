@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " List of plugins
+Plug 'Yggdroot/indentLine'
 Plug 'reedes/vim-pencil'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
@@ -12,7 +13,6 @@ Plug 'mattn/emmet-vim'
 Plug 'vimwiki/vimwiki'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
