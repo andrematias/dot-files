@@ -4,7 +4,6 @@ source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/goyo.vim
 source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/vimwiki.vim
-source $HOME/.config/nvim/plugins/indentline.vim
 source $HOME/.config/nvim/plugins/emmet.vim
 source $HOME/.config/nvim/plugins/gruvbox.vim
 source $HOME/.config/nvim/plugins/list.vim

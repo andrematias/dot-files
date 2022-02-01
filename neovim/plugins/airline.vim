@@ -1,6 +1,6 @@
 " Setting airline status bar plugin
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'

@@ -1,4 +1,4 @@
-set guifont=FiraCode\ NF:h11
+set guifont=FiraCode\ NF:h12
 set guioptions-=m
 set guioptions-=T
 
@@ -11,4 +11,4 @@ let g:neovide_remember_window_size = v:true
 let g:neovide_cursor_antialiasing=v:true
 
 " let g:neovide_fullscreen=v:true
-" let g:neovide_transparency=0.8
+" let g:neovide_transparency=0.96

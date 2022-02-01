@@ -51,3 +51,7 @@ cmap w!! w !sudo tee %
 " fzf map
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>f :Files<CR>
+
+"""""" Terminal mode maps
+" To Come back to normal mode into terminal buffer
+tnoremap <Esc> <C-\><C-n>
