@@ -37,8 +37,8 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=70
+set textwidth=70
 set expandtab
 set viminfo='25,\"50,n~/.viminfo
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
