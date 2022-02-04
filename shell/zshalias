@@ -1,5 +1,6 @@
 #! /bin/zsh
 alias vim="sudo nvim"
+alias vimdiff="nvim -d"
 alias gvim="sudo neovide"
 alias sudo="sudo -sE"
 alias cat="bat"
@@ -13,3 +14,6 @@ alias notes="zet"
 alias f="fzf"
 alias files="vifm"
 alias ff="vifm"
+alias calendar="cal --color='always'"
+alias t="task"
+alias ta="task add"
