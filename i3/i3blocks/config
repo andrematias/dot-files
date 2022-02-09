@@ -1,0 +1,47 @@
+full_text=⦿
+align=center
+color=#ffffff
+separator=false
+separator_block_width=5
+
+
+[memory]
+command=~/.config/i3blocks/blocks/memory.sh
+interval=1
+color=#f5535c
+
+[separator]
+
+[cpu]
+command=~/.config/i3blocks/blocks/cpu.sh
+interval=1
+color=#f5535c
+
+[separator]
+
+[btc]
+command=~/.config/i3blocks/blocks/crypto.py | awk '{print "BTC: $" $1}'
+interval=3600
+color=#3cb558
+
+[separator]
+
+[xrp]
+command=~/.config/i3blocks/blocks/crypto.py XRPUSDT | awk '{print "XRP: $" $1}'
+interval=3600
+color=#3cb558
+
+[separator]
+
+[time]
+command=date '+%Y-%m-%d'
+interval=once
+color=#aaaaaa
+
+[time]
+instance=br
+TZ=America/Sao_Paulo
+command=date +%T
+interval=1
+color=#00aaff
+
