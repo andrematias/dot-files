@@ -4,9 +4,9 @@ source ~/.zshalias
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git fzf zsh-autosuggestions)
+plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-keychain --quiet --agents ssh id_rsa ~/.ssh/github
+keychain --quiet --agents ssh id_rsa
 source ~/.keychain/${HOST}-sh
