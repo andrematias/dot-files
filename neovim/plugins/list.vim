@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " List of plugins
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'reedes/vim-pencil'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
