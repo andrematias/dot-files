@@ -42,16 +42,30 @@ fi
 
 xset r rate 200 50
 xrandr --output DP-2 --mode 1920x1080 --rate 144.00
-slstatus &
-nm-applet &
-redshift-gtk &
-pa-applet &
-xwallpaper --zoom ~/Pictures/wallpapers/satsuki.jpg
+xwallpaper --zoom ~/Pictures/wallpapers/titan_atack_4.jpg
 picom --config ~/.config/picom/picom.conf -b
-dunst &
 
-if [ -n "$failsafe" ]; then
- exec dwm
-else
- exec $command
-fi
+function _dwm {
+    slstatus &
+    nm-applet &
+    redshift-gtk &
+    pa-applet &
+    dunst &
+    exec dwm
+}
+
+
+case "$WM" in
+    dwm)
+        _dwm
+        ;;
+
+    i3)
+        exec i3
+        ;;
+
+    *)
+        _dwm
+        ;;
+esac
+
