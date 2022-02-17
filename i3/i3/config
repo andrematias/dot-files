@@ -6,7 +6,7 @@
 # Mod1 = Alt, Mod4 = 'super' key
 set $alt Mod1
 set $sup Mod4
-set $psst $psst
+set $psst --no-startup-id
 
 # Disable mouse focus
 focus_follows_mouse no
@@ -87,6 +87,14 @@ bindsym $alt+a focus parent
 
 bindsym $alt+Shift+r restart
 bindsym $alt+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+default_border pixel 2
+# hide_edge_borders smart
+
+
+####################################################################
+#   i3 Gaps
+####################################################################
+# gaps inner 8
 
 
 ####################################################################
@@ -186,9 +194,11 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec $psst dex --autostart --environment i3
 exec $psst xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec $psst pa-applet
 exec $psst nm-applet
 exec $psst dunst
 exec $psst redshift-gtk
+exec_always $psst autotiling
 
 ####################################################################
 #   StatusBar
@@ -197,13 +207,16 @@ exec $psst redshift-gtk
 bar {
     status_command i3blocks
     position top
-    font pango:FiraCode NF 9
+    font pango:monospace 8
+    separator_symbol " "
+    tray_padding 1
+    # mode hide
 
     colors {
         #                   border  background   text
         background          $tx
         statusline          $fg
-        separator           $hi
+        separator           $fg
         focused_workspace   $ac        $ac        $tx
         active_workspace    $ac        $ac        $tx
         inactive_workspace  $bg        $bg        $ia
@@ -221,6 +234,9 @@ for_window [instance="pavucontrol"] floating enable
 for_window [instance="transmission-gtk"] floating enable
 for_window [title="Picture-in-Picture"] sticky enable, border normal 0
 for_window [instance="qalculate-gtk"] floating enable
+for_window [instance="exodus"] floating enable
+for_window [title="FreeRDP*"] floating enable
+for_window [instance="lxappearance"] floating enable
 
 
 ####################################################################

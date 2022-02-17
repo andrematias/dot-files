@@ -1,7 +1,9 @@
 #!/bin/bash
 
 function lock {
-    i3lock --ignore-empty-password  --show-failed-attempts --image ~/Pictures/wallpapers/titan_atack_4.jpg
+    i3lock --ignore-empty-password \
+        --show-failed-attempts \
+        --image "/home/matias/Pictures/wallpapers/joker.png"
 }
 
 case "$1" in
