@@ -4,3 +4,4 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
+Xcursor.theme:cz-Hickson-White
