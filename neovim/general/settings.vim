@@ -28,9 +28,6 @@ set autochdir
 set ttyfast
 set autoread
 set foldmethod=manual
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
 set smarttab
 set smartindent
 set autoindent
