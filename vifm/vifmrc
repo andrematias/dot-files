@@ -59,14 +59,14 @@ command! reload :write | restart full
 " ------------------------------------------------------------------------------
 
 " Pdf
-filextype {*.pdf},<application/pdf> okular %c
+filextype {*.pdf},<application/pdf> okular %c &
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
-       \ {Play using MPlayer}
-       \ mpv %f,
+        \ {Play using MPlayer}
+        \ mpv %f,
 
 " Video
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
@@ -74,7 +74,7 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.as[fx]},
          \<video/*>
         \ {View using mplayer}
-        \ mpv %f,
+        \ mpv %f &,
 
 " Web
 filextype {*.html,*.htm},<text/html>
@@ -93,7 +93,10 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in sxiv}
         \ sxiv %f,
         \ {View in gpicview}
-        \ gpicview %c,
+        \ gpicview %c &,
+
+" Epub
+filextype {*.epub} {View in epy} epy %c,
 
 " MD5
 filetype *.md5
@@ -190,7 +193,7 @@ filextype */
 
 
 " Syntax highlighting in preview
-fileviewer *[^/] bat --color always --wrap never --pager never %c -p
+" fileviewer *[^/] bat --color always --wrap never --pager never %c -p
 
 
 " ------------------------------------------------------------------------------
