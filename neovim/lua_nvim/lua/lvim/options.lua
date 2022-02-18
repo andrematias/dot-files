@@ -1,7 +1,7 @@
 -- Use :help options to see all options :)
 
 local options = {
-	fileencoding = "utf-8", 
+	fileencoding = "utf-8",
   shiftwidth = 2,
 	expandtab = true,
   tabstop = 2,
@@ -30,14 +30,13 @@ local options = {
   hlsearch = true,
 	splitbelow = true,
   splitright = true,
-	mouse = "a",
   termguicolors = true,
   relativenumber = true,
   background = "dark",
   spell = false
 }
 
--- Let's iterate this options 
+-- Let's iterate this options
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

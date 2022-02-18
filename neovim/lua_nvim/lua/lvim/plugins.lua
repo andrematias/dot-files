@@ -38,6 +38,6 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-commentary"
   use "lunarvim/darkplus.nvim"
-  use "morhetz/gruvbox"
+  use "ellisonleao/gruvbox.nvim"
   use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
 end)
