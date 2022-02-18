@@ -7,4 +7,5 @@ require "lvim.lsp"
 require "lvim.telescope"
 require "lvim.nvim-tree"
 require "lvim.treesitter"
+require "lvim.buffline"
 

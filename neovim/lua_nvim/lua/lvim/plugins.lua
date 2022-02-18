@@ -52,4 +52,8 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "kyazdani42/nvim-web-devicons"
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+
 end)
