@@ -8,4 +8,5 @@ require "lvim.telescope"
 require "lvim.nvim-tree"
 require "lvim.treesitter"
 require "lvim.buffline"
+require "lvim.lualine"
 
