@@ -7,6 +7,7 @@ end
 lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = require("lvim.lsp.handlers").on_attach,
+    capabilities = require("lvim.lsp.handlers").capabilities
   }
 
   if server.name == "sumneko_lua" then
