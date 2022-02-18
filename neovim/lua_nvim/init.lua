@@ -5,3 +5,5 @@ require "lvim.colorscheme"
 require "lvim.cmp"
 require "lvim.lsp"
 require "lvim.telescope"
+require "lvim.nvim-tree"
+

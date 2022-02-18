@@ -13,19 +13,19 @@ if has_telescope then
   keymap(
     "n",
     "<leader>f",
-    "<cmd>lua require('telescope.builtin').find_files()<cr>",
+    "<cmd>lua require( 'telescope.builtin').find_files( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
     opts
   )
   keymap(
     "n",
     "<leader>g",
-    "<cmd>lua require('telescope.builtin').live_grep()<cr>",
+    "<cmd>lua require( 'telescope.builtin').live_grep( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
     opts
   )
   keymap(
     "n",
     "<leader>b",
-    "<cmd>lua require('telescope.builtin').buffers()<cr>",
+    "<cmd>lua require( 'telescope.builtin').buffers( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
     opts
   )
 end
@@ -53,6 +53,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Close current buffer 
 keymap("n", "<leader>c", ":bdelete<CR>", opts)
 
+-- To Nvim-tree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Insert mode
 -- Option to esc with jk or kj
