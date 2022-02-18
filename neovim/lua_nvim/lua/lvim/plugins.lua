@@ -37,5 +37,7 @@ return packer.startup(function(use)
   use "junegunn/goyo.vim"
   use "tpope/vim-fugitive"
   use "tpope/vim-commentary"
+  use "lunarvim/darkplus.nvim"
+  use "morhetz/gruvbox"
 
 end) 
