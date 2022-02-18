@@ -59,5 +59,8 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "airblade/vim-gitgutter"
+  use "goolord/alpha-nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "vimwiki/vimwiki"
 
 end)

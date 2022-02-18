@@ -10,4 +10,7 @@ require "lvim.treesitter"
 require "lvim.buffline"
 require "lvim.lualine"
 require "lvim.toggleterm"
+require "lvim.alpha"
+require "lvim.indentline"
+require "lvim.vimwiki"
 
