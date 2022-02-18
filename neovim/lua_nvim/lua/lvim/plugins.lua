@@ -32,6 +32,7 @@ end
 -- Install plugins
 return packer.startup(function(use)
 
+  use 'lewis6991/impatient.nvim'
   use "nvim-lua/plenary.nvim"
   use "wbthomason/packer.nvim"
   use "junegunn/goyo.vim"
