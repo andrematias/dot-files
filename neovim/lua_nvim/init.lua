@@ -9,4 +9,5 @@ require "lvim.nvim-tree"
 require "lvim.treesitter"
 require "lvim.buffline"
 require "lvim.lualine"
+require "lvim.toggleterm"
 

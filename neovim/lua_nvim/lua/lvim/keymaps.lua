@@ -31,6 +31,13 @@ if has_telescope then
 end
 
 
+--To toggleterm
+
+local has_toggleterm, _ = pcall(require, "toggleterm")
+if has_toggleterm then
+  keymap("n", "<leader>t", ":ToggleTerm direction=horizontal size=10<CR>", opts)
+end
+
 -- To windows navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
