@@ -7,6 +7,30 @@ vim.g.maplocalleader = " "
 keymap("", "<Space>", "<Nop>", opts)
 
 -- Normal mode
+-- To telescope
+local has_telescope, _ = pcall(require, "telescope")
+if has_telescope then
+  keymap(
+    "n",
+    "<leader>f",
+    "<cmd>lua require('telescope.builtin').find_files()<cr>",
+    opts
+  )
+  keymap(
+    "n",
+    "<leader>g",
+    "<cmd>lua require('telescope.builtin').live_grep()<cr>",
+    opts
+  )
+  keymap(
+    "n",
+    "<leader>b",
+    "<cmd>lua require('telescope.builtin').buffers()<cr>",
+    opts
+  )
+end
+
+
 -- To windows navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)

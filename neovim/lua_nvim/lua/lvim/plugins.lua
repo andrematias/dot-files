@@ -33,6 +33,7 @@ end
 -- Install plugins
 return packer.startup(function(use)
 
+  use "nvim-lua/plenary.nvim"
   use "wbthomason/packer.nvim"
   use "junegunn/goyo.vim"
   use "tpope/vim-fugitive"
@@ -40,4 +41,6 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "ellisonleao/gruvbox.nvim"
   use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+  use {"nvim-telescope/telescope.nvim", "nvim-telescope/telescope-fzy-native.nvim"}
+
 end)
