@@ -33,11 +33,11 @@ end
 -- Install plugins
 return packer.startup(function(use)
 
-  use "wbthomason/packer.nvim" 
+  use "wbthomason/packer.nvim"
   use "junegunn/goyo.vim"
   use "tpope/vim-fugitive"
   use "tpope/vim-commentary"
   use "lunarvim/darkplus.nvim"
   use "morhetz/gruvbox"
-
-end) 
+  use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+end)
