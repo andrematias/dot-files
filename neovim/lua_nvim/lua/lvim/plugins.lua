@@ -37,7 +37,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "junegunn/goyo.vim"
   use "tpope/vim-fugitive"
-  use "tpope/vim-commentary"
+  use "numToStr/Comment.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
   use "lunarvim/darkplus.nvim"
   use "ellisonleao/gruvbox.nvim"
   use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}

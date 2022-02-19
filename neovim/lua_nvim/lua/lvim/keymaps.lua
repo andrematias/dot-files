@@ -42,11 +42,6 @@ if has_toggleterm then
   )
 end
 
-
-keymap( "n", "<leader>f", ":Files<cr>", opts)
-keymap( "n", "<leader>b", ":Buffers<cr>", opts)
-keymap( "n", "<leader>g", ":Rg<cr>", opts)
-
 -- To windows navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
