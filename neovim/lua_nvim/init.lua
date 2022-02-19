@@ -13,4 +13,5 @@ require "lvim.toggleterm"
 require "lvim.alpha"
 require "lvim.indentline"
 require "lvim.vimwiki"
+require "lvim.autocommands"
 

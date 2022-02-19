@@ -1,10 +1,11 @@
 -- Use :help options to see all options :)
 
 local options = {
-	fileencoding = "utf-8",
-  shiftwidth = 2,
-	expandtab = true,
-  tabstop = 2,
+  fileencoding = "utf-8",
+  textwidth = 75,
+  shiftwidth = 4,
+  tabstop = 4,
+  expandtab = true,
   cmdheight = 1,
   swapfile = false,
   undofile = true,
@@ -28,12 +29,12 @@ local options = {
   showtabline = 2,
   pumheight = 10,
   hlsearch = true,
-	splitbelow = true,
+  splitbelow = true,
   splitright = true,
   termguicolors = true,
   relativenumber = true,
   background = "dark",
-  spell = false
+  spell = false,
 }
 
 -- Let's iterate this options
@@ -43,6 +44,8 @@ end
 
 -- Some things doesn't go well with for loop
 vim.opt.shortmess:append "c"
+
+vim.wo.colorcolumn = '80'
 
 -- Legacy vim script
 vim.cmd "set whichwrap+=<,>,[,],h,l"

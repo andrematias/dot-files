@@ -58,7 +58,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 
 -- Close current buffer
-keymap("n", "<leader>c", ":Bdelete<CR>", opts)
+keymap("n", "<leader>c", ":bdelete<CR>", opts)
 
 -- To Nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
