@@ -32,7 +32,6 @@ end
 
 
 --To toggleterm
-
 local has_toggleterm, _ = pcall(require, "toggleterm")
 if has_toggleterm then
   keymap(
@@ -42,6 +41,11 @@ if has_toggleterm then
     opts
   )
 end
+
+
+keymap( "n", "<leader>f", ":Files<cr>", opts)
+keymap( "n", "<leader>b", ":Buffers<cr>", opts)
+keymap( "n", "<leader>g", ":Rg<cr>", opts)
 
 -- To windows navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

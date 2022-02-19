@@ -41,7 +41,6 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "ellisonleao/gruvbox.nvim"
   use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
-  use {"nvim-telescope/telescope.nvim", "nvim-telescope/telescope-fzy-native.nvim"}
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
@@ -60,5 +59,6 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "vimwiki/vimwiki"
   use "reedes/vim-pencil"
+  use "junegunn/fzf.vim"
 
 end)
