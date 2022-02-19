@@ -78,11 +78,17 @@ telescope.setup {
     },
   },
   pickers = {
+    oldfiles = {
+      previewer = false,
+      theme = "dropdown"
+    },
     buffers = {
-      previewer = false
+      previewer = false,
+      theme = "dropdown"
     },
     find_files = {
-      previewer = false
+      previewer = false,
+      theme = "dropdown"
     }
   },
   extensions = {

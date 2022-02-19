@@ -13,19 +13,19 @@ if has_telescope then
   keymap(
     "n",
     "<leader>f",
-    "<cmd>lua require( 'telescope.builtin').find_files( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    "<cmd>lua require( 'telescope.builtin').find_files()<cr>",
     opts
   )
   keymap(
     "n",
     "<leader>g",
-    "<cmd>lua require( 'telescope.builtin').live_grep( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    "<cmd>lua require( 'telescope.builtin').live_grep()<cr>",
     opts
   )
   keymap(
     "n",
     "<leader>b",
-    "<cmd>lua require( 'telescope.builtin').buffers( require( 'telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    "<cmd>lua require( 'telescope.builtin').buffers()<cr>",
     opts
   )
 end
@@ -35,7 +35,12 @@ end
 
 local has_toggleterm, _ = pcall(require, "toggleterm")
 if has_toggleterm then
-  keymap("n", "<leader>t", ":ToggleTerm direction=horizontal size=10<CR>", opts)
+  keymap(
+    "n", 
+    "<leader>t",
+    ":ToggleTerm direction=horizontal size=10<CR>",
+    opts
+  )
 end
 
 -- To windows navigation

@@ -45,7 +45,6 @@ end
 -- Some things doesn't go well with for loop
 vim.opt.shortmess:append "c"
 
-vim.wo.colorcolumn = '80'
 
 -- Legacy vim script
 vim.cmd "set whichwrap+=<,>,[,],h,l"
