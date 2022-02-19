@@ -49,10 +49,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"
   use "kyazdani42/nvim-tree.lua"
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
   use "kyazdani42/nvim-web-devicons"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -62,5 +59,6 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "vimwiki/vimwiki"
+  use "reedes/vim-pencil"
 
 end)
