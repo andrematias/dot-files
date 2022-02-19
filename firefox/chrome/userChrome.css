@@ -106,20 +106,3 @@
 /* Move up the content view */
 :root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: var(--uc-navbar-transform); }
 
-/* Changes various in-UI scrollabars to be slim and more subtle */
-
-.panel-subview-body,
-#permList,
-scrollbar{
- color: inherit;
- scrollbar-color: currentColor transparent;
- scrollbar-width: thin
-}
-
-/* Hide scrollbar */
-:-moz-any(#content,#appcontent) browser{
- margin-right:-14px!important;
- overflow-y:scroll;
- margin-bottom:-14px!important;
- overflow-x:scroll;
-}
