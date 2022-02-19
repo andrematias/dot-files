@@ -60,5 +60,6 @@ return packer.startup(function(use)
   use "vimwiki/vimwiki"
   use "reedes/vim-pencil"
   use "junegunn/fzf.vim"
+  use "airblade/vim-rooter"
 
 end)
