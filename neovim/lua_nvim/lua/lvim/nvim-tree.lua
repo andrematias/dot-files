@@ -83,11 +83,13 @@ nvim_tree.setup {
     auto_resize = true,
     mappings = {
       custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
+      -- list = {
+      --   {
+      --      key = { "l", "<CR>", "o" },
+      --      action="edit",
+      --      action_cb = custom_callback -- optional
+      --    },
+      -- },
     },
     number = false,
     relativenumber = false,
