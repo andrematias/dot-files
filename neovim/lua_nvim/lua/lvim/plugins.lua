@@ -62,7 +62,7 @@ return packer.startup(function(use)
   use "reedes/vim-pencil"
   use "junegunn/fzf.vim"
   use "airblade/vim-rooter"
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
 end)
