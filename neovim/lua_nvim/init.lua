@@ -13,6 +13,6 @@ require "lvim.alpha"
 require "lvim.indentline"
 require "lvim.vimwiki"
 require "lvim.autocommands"
-require "lvim.fzf"
 require "lvim.comments"
+require "lvim.telescope"
 

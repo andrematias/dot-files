@@ -60,9 +60,16 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "vimwiki/vimwiki"
   use "reedes/vim-pencil"
-  use "junegunn/fzf.vim"
   use "airblade/vim-rooter"
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-telescope/telescope-fzy-native.nvim'}
+    }
+  }
 
 end)

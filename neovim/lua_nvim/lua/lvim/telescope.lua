@@ -89,6 +89,10 @@ telescope.setup {
     find_files = {
       previewer = false,
       theme = "dropdown"
+    },
+    live_grep = {
+      previewer = false,
+      theme = "dropdown"
     }
   },
   extensions = {
