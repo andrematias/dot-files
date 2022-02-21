@@ -3,7 +3,7 @@
 function lock {
     i3lock --ignore-empty-password \
         --show-failed-attempts \
-        --image "/home/matias/Pictures/wallpapers/joker.png"
+        --image "/home/andrematias/Pictures/wallpapers/titan_atack_4.jpg"
 }
 
 case "$1" in
@@ -14,10 +14,10 @@ case "$1" in
         i3-msg exit
         ;;
     reboot)
-        reboot
+        sudo reboot
         ;;
     poweroff)
-        poweroff
+        sudo poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|reboot|poweroff}"

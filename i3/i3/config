@@ -4,7 +4,7 @@
 ####################################################################
 
 # Mod1 = Alt, Mod4 = 'super' key
-set $alt Mod1
+set $alt Mod4
 set $sup Mod4
 set $psst --no-startup-id
 
@@ -22,24 +22,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
-# color defines
-set $bg #2c2c2e
-set $fg #9f9f9f
-set $hi #efef8f
-set $ac #ba9c52
-set $tx #040404
-set $ia #8f8f8f
-set $be #8faf9f
-set $yw #ccdc90
-set $gn #88b090
-set $rd #e89393
-
-# set some nice colors      border     background  text
-client.focused              $ac        $ac         $tx
-client.unfocused            $bg        $bg         $ia
-client.focused_inactive     $bg        $bg         $ac
-client.urgent               $rd        $rd         $tx
 
 # enable window icons for all windows
 for_window [all] title_window_icon off
@@ -87,7 +69,7 @@ bindsym $alt+a focus parent
 
 bindsym $alt+Shift+r restart
 bindsym $alt+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
-default_border pixel 2
+# default_border pixel 2
 # hide_edge_borders smart
 
 
@@ -187,6 +169,13 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Monitor ligth
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 
+
+# Keyboard light
+bindsym XF86KbdBrightnessUp exec sudo kbd_backlight up
+bindsym XF86KbdBrightnessDown exec sudo kbd_backlight down
 
 ####################################################################
 #   Exec applications
@@ -211,17 +200,6 @@ bar {
     separator_symbol " "
     tray_padding 1
     # mode hide
-
-    colors {
-        #                   border  background   text
-        background          $tx
-        statusline          $fg
-        separator           $fg
-        focused_workspace   $ac        $ac        $tx
-        active_workspace    $ac        $ac        $tx
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $rd        $tx
-    }
 }
 
 

@@ -1,3 +1,8 @@
+[battery]
+command=~/.config/i3blocks/blocks/battery.py
+markup=pango
+interval=30
+
 [memory]
 command=~/.config/i3blocks/blocks/memory.sh
 interval=5
