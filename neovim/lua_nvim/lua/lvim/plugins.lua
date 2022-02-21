@@ -51,8 +51,6 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
   use "kyazdani42/nvim-web-devicons"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "airblade/vim-gitgutter"
@@ -60,16 +58,16 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "vimwiki/vimwiki"
   use "reedes/vim-pencil"
-  use "airblade/vim-rooter"
-  use "L3MON4D3/LuaSnip"
-  use "rafamadriz/friendly-snippets"
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-fzy-native.nvim'}
     }
   }
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+  use "ahmedkhalf/project.nvim"
+  use "moll/vim-bbye"
 
 end)

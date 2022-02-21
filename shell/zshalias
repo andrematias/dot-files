@@ -1,7 +1,7 @@
 #! /bin/zsh
 alias vim="sudo nvim"
+alias gvim="sudo nvim-qt"
 alias vimdiff="nvim -d"
-alias gvim="sudo neovide"
 alias sudo="sudo -sE"
 alias cat="bat"
 alias em="sudo -sE emerge"

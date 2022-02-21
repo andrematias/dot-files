@@ -62,10 +62,23 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local count_buf = function()
+  local buf_list = vim.api.nvim_list_bufs()
+  local total = 0
+  for _, buf in ipairs(buf_list) do
+    local exists = vim.api.nvim_buf_is_valid(buf)
+    local is_loaded = vim.api.nvim_buf_is_loaded(buf)
+    if exists and is_loaded then
+      total = total + 1
+    end
+  end
+  return " " .. total
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "gruvbox",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
@@ -76,7 +89,7 @@ lualine.setup({
 		lualine_b = { branch, diagnostics },
 		lualine_c = { "filename"},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, "encoding", filetype },
+		lualine_x = { diff, "encoding", filetype, count_buf },
 		lualine_y = {  },
 		lualine_z = { "progress" },
 	},

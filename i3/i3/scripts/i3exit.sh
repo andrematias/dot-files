@@ -3,7 +3,7 @@
 function lock {
     i3lock --ignore-empty-password \
         --show-failed-attempts \
-        --image "/home/matias/Pictures/wallpapers/joker.png"
+        --image "/home/matias/Pictures/wallpapers/cyborg_gruv.png"
 }
 
 case "$1" in
