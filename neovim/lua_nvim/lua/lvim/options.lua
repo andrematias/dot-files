@@ -18,7 +18,7 @@ local options = {
   foldmethod = "manual",
   updatetime = 300,
   writebackup = false,
-  cursorline = true,
+  cursorline = false,
   number = true,
   signcolumn = "yes",
   wrap = true,
@@ -26,7 +26,7 @@ local options = {
   sidescrolloff = 8,
   mouse = "a",
   showmode = false,
-  showtabline = 2,
+  showtabline = 0,
   pumheight = 10,
   hlsearch = true,
   splitbelow = true,
@@ -35,6 +35,9 @@ local options = {
   relativenumber = true,
   background = "dark",
   spell = false,
+  spelllang = "pt,en",
+  guifont = "Fira Code:h12",
+  readonly = false
 }
 
 -- Let's iterate this options

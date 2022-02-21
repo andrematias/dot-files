@@ -4,8 +4,7 @@
 ####################################################################
 
 # Mod1 = Alt, Mod4 = 'super' key
-set $alt Mod4
-set $sup Mod4
+set $mod Mod4
 set $psst --no-startup-id
 
 # Disable mouse focus
@@ -30,53 +29,54 @@ for_window [all] title_window_icon off
 font pango:FiraCode NF 10
 
 # start a terminal
-bindsym $alt+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
-bindsym $alt+Shift+c kill
+bindsym $mod+Shift+c kill
 
 # start launcher
-bindsym $alt+p exec "rofi -modi drun,run -show drun -show-icons"
+bindsym $mod+p exec "rofi -modi drun,run -show drun -show-icons"
 
 # switch between opened windows with rofi
-bindsym $alt+Tab exec rofi -show window -hide-scrollbar
+bindsym $mod+Tab exec rofi -show window -hide-scrollbar
 
 
 # split in horizontal orientation
-bindsym $alt+Control+l split h
-bindsym $alt+Shift+Control+l split h
+bindsym $mod+Control+l split h
+bindsym $mod+Shift+Control+l split h
 
 # split in vertical orientation
-bindsym $alt+Control+j split v
-bindsym $alt+Shift+Control+j split v
+bindsym $mod+Control+j split v
+bindsym $mod+Shift+Control+j split v
 
 # enter fullscreen mode for the focused container
-bindsym $alt+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $alt+m layout stacking
-bindsym $alt+t layout tabbed
-bindsym $alt+s layout toggle split
+bindsym $mod+m layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $alt+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $alt+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $alt+a focus parent
+bindsym $mod+a focus parent
 
-bindsym $alt+Shift+r restart
-bindsym $alt+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
-# default_border pixel 2
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+#default_border pixel 2
 # hide_edge_borders smart
 
 
 ####################################################################
 #   i3 Gaps
 ####################################################################
-# gaps inner 8
+gaps inner 5
+#smart_borders no_gaps
 
 
 ####################################################################
@@ -95,62 +95,62 @@ mode $mode_resize {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $alt+r mode "default"
+        bindsym $mod+r mode "default"
 }
 
-bindsym $alt+r mode "$mode_resize"
+bindsym $mod+r mode "$mode_resize"
 
 # switch to workspace
-bindsym $alt+1 workspace number $ws1
-bindsym $alt+2 workspace number $ws2
-bindsym $alt+3 workspace number $ws3
-bindsym $alt+4 workspace number $ws4
-bindsym $alt+5 workspace number $ws5
-bindsym $alt+6 workspace number $ws6
-bindsym $alt+7 workspace number $ws7
-bindsym $alt+8 workspace number $ws8
-bindsym $alt+9 workspace number $ws9
-bindsym $alt+0 workspace number $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $alt+Shift+1 move container to workspace number $ws1
-bindsym $alt+Shift+2 move container to workspace number $ws2
-bindsym $alt+Shift+3 move container to workspace number $ws3
-bindsym $alt+Shift+4 move container to workspace number $ws4
-bindsym $alt+Shift+5 move container to workspace number $ws5
-bindsym $alt+Shift+6 move container to workspace number $ws6
-bindsym $alt+Shift+7 move container to workspace number $ws7
-bindsym $alt+Shift+8 move container to workspace number $ws8
-bindsym $alt+Shift+9 move container to workspace number $ws9
-bindsym $alt+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 # change focus
-bindsym $alt+h focus left
-bindsym $alt+j focus down
-bindsym $alt+k focus up
-bindsym $alt+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $alt+Left focus left
-bindsym $alt+Down focus down
-bindsym $alt+Up focus up
-bindsym $alt+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-bindsym $alt+Shift+h move left
-bindsym $alt+Shift+j move down
-bindsym $alt+Shift+k move up
-bindsym $alt+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $alt+Shift+Left move left
-bindsym $alt+Shift+Down move down
-bindsym $alt+Shift+Up move up
-bindsym $alt+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-# Use Mouse+$alt to drag floating windows
-floating_modifier $alt
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
 
 ####################################################################
 #   MediaKeys
@@ -183,7 +183,7 @@ bindsym XF86KbdBrightnessDown exec sudo kbd_backlight down
 
 exec $psst dex --autostart --environment i3
 exec $psst xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec $psst pa-applet
+# exec $psst pa-applet
 exec $psst nm-applet
 exec $psst dunst
 exec $psst redshift-gtk
@@ -196,10 +196,12 @@ exec_always $psst autotiling
 bar {
     status_command i3blocks
     position top
-    font pango:monospace 8
     separator_symbol " "
     tray_padding 1
+    height 18
     # mode hide
+    # hidden_state hide
+    # modifier $mod
 }
 
 
@@ -210,7 +212,7 @@ bar {
 for_window [instance="keepassx"] floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [instance="transmission-gtk"] floating enable
-for_window [title="Picture-in-Picture"] sticky enable, border normal 0
+for_window [title="Picture-in-Picture"] sticky enable 
 for_window [instance="qalculate-gtk"] floating enable
 for_window [instance="exodus"] floating enable
 for_window [title="FreeRDP*"] floating enable
@@ -241,5 +243,10 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym Ctrl+$alt+Delete mode "$mode_system"
+bindsym Ctrl+$mod+Delete mode "$mode_system"
 
+####################################################################
+#  Launch favorite programs 
+####################################################################
+
+bindsym $mod+Shift+e exec $psst /usr/bin/nvim-qt

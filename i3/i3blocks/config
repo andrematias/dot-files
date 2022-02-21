@@ -1,3 +1,5 @@
+# vim:filetype=cfg
+
 [battery]
 command=~/.config/i3blocks/blocks/battery.py
 markup=pango
@@ -6,27 +8,22 @@ interval=30
 [memory]
 command=~/.config/i3blocks/blocks/memory.sh
 interval=5
-color=#f5535c
 
 [cpu]
 command=~/.config/i3blocks/blocks/cpu.sh
 interval=5
-color=#f5535c
 
 [btc]
 command=~/.config/i3blocks/blocks/crypto.py
 label=BTC $
 interval=3600
-color=#3cb558
 
 [xrp]
 command=~/.config/i3blocks/blocks/crypto.py XRPUSDT
 interval=3600
-color=#3cb558
 label=XRP $
 
 [datetime]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
-color=#aaaaaa
 

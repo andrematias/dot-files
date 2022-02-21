@@ -35,7 +35,7 @@ end
 local has_toggleterm, _ = pcall(require, "toggleterm")
 if has_toggleterm then
   keymap(
-    "n", 
+    "n",
     "<leader>t",
     ":ToggleTerm direction=horizontal size=10<CR>",
     opts
@@ -67,7 +67,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 
 -- Close current buffer
-keymap("n", "<leader>c", ":bdelete<CR>", opts)
+keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 
 -- To Nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

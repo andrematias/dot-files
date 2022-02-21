@@ -23,12 +23,6 @@ local autocmds = {
     {"FileType", "css", "setlocal", [[tabstop=2 shiftwidth=2 softtabstop=2]]};
     {"FileType", "html", "setlocal", [[tabstop=2 shiftwidth=2 softtabstop=2]]};
   };
-
-  save_folds = {
-    -- Auto save and restore folds
-    {"BufWinLeave", "*.*", "mkview"};
-    {"BufWinEnter", "*.*", "silent!", "loadview"};
-  };
 }
 
 nvim_create_augroups(autocmds)

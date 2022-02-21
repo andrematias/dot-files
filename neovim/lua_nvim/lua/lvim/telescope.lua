@@ -89,14 +89,24 @@ telescope.setup {
     find_files = {
       previewer = false,
       theme = "dropdown"
+    },
+    live_grep = {
+      previewer = false,
+      theme = "dropdown"
+    },
+    projects = {
+      previewer = false,
+      theme = "dropdown"
     }
   },
   extensions = {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
-    }
+    },
   },
 }
 
+
+require('telescope').load_extension('projects')
 require('telescope').load_extension('fzy_native')

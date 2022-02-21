@@ -3,7 +3,8 @@
 function lock {
     i3lock --ignore-empty-password \
         --show-failed-attempts \
-        --image "/home/andrematias/Pictures/wallpapers/titan_atack_4.jpg"
+        --image "/home/matias/Pictures/wallpapers/cyborg_gruv.png"
+>>>>>>> 304d77b (Updating)
 }
 
 case "$1" in
