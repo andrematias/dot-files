@@ -1,5 +1,5 @@
 NVIM_DARK_THEME = "modus-vivendi"
-NVIM_LIGTH_THEME = "moduls-operandi"
+NVIM_LIGTH_THEME = "modus-operandi"
 
 vim.g.modus_dim_inactive_window = 0
 
