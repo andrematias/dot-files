@@ -23,22 +23,23 @@ set $ws9 "9"
 set $ws10 "10"
 
 # enable window icons for all windows
-for_window [all] title_window_icon off
+for_window [all] title_window_icon on
 
 # fonts
-font pango:FiraCode NF 10
+font pango:FiraCode NF 12
 
 # start a terminal
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+c kill
 
 # start launcher
-bindsym $mod+p exec "rofi -modi drun,run -show drun -show-icons"
-
+# bindsym $mod+p exec qdbus org.kde.krunner /App querySingleRunner applications ""
+# bindsym $mod+p exec rofi -width 60 -hide-scrollbar -show-icons -show drun
+bindsym $mod+p exec ~/.config/rofi/launchers/type-4/launcher.sh
 # switch between opened windows with rofi
-bindsym $mod+Tab exec rofi -show window -hide-scrollbar
+bindsym $mod+Tab exec rofi -show window -width 200 -hide-scrollbar
 
 
 # split in horizontal orientation
@@ -67,7 +68,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
 #default_border pixel 2
 # hide_edge_borders smart
 
@@ -75,8 +76,8 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit
 ####################################################################
 #   i3 Gaps
 ####################################################################
-gaps inner 5
-#smart_borders no_gaps
+# gaps inner 5
+# smart_borders no_gaps
 
 
 ####################################################################
@@ -157,30 +158,40 @@ floating_modifier $mod
 ####################################################################
 
 # PulseAudio key bindings
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec $psst pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec $psst pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec $psst pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec $psst pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# set $refresh_i3status killall -SIGUSR1 i3status
+# bindsym XF86AudioRaiseVolume exec $psst pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec $psst pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec $psst pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec $psst pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# #
+# # # Media player key bindings
+# bindsym XF86AudioPlay exec playerctl play
+# bindsym XF86AudioPause exec playerctl pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
 
-# Media player key bindings
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
+bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
+bindsym XF86AudioLowerVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
+bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
 
 ####################################################################
 #   Exec applications
 ####################################################################
 
-exec $psst dex --autostart --environment i3
+# exec $psst dex --autostart --environment i3
+# exec $psst wmctrl -c Plasma
 exec $psst xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec $psst setxkbmap -option "ctrl:nocaps,compose:ralt"
+exec $psst xrandr --output DP-2 --mode 1920x1080 --rate 144.00
 # exec $psst pa-applet
 exec $psst nm-applet
-exec $psst dunst
-exec $psst redshift-gtk
+#exec $psst dunst
+exec $psst xset r rate 200 50 
+exec $psst /usr/lib/pam_kwallet_init
+exec $psst xwallpaper --maximize ~/Pictures/wallpapers/goku_circle.png
 exec_always $psst autotiling
+exec_always $psst picom -c ~/.config/picom/picom.conf
 
 ####################################################################
 #   StatusBar
@@ -188,13 +199,13 @@ exec_always $psst autotiling
 
 bar {
     status_command i3blocks
-    position top
-    separator_symbol " "
-    tray_padding 1
-    height 18
-    # mode hide
+    position bottom
+    # separator_symbol " "
+    # tray_padding 1
+    # height 18
+    mode invisible
     # hidden_state hide
-    # modifier $mod
+    # modifier Mod4
 }
 
 
@@ -202,44 +213,63 @@ bar {
 #   Floating Rules
 ####################################################################
 
-for_window [instance="keepassx"] floating enable
+# for_window [instance="keepassx"] floating enable
 for_window [instance="pavucontrol"] floating enable
-for_window [instance="transmission-gtk"] floating enable
 for_window [title="Picture-in-Picture"] sticky enable 
 for_window [instance="qalculate-gtk"] floating enable
 for_window [instance="exodus"] floating enable
-for_window [title="FreeRDP*"] floating enable
 for_window [instance="lxappearance"] floating enable
+
+# Set Plasma dialogs and pop ups as floating so they won't get tiled
+for_window [title="Desktop — Plasma"] kill; floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable
+for_window [title="plasma-desktop"] floating enable
+for_window [class="krunner"] border none, floating enable
+for_window [class="Kmix"] floating enable
+for_window [class="Klipper"] floating enable
+for_window [class="Plasmoidviewer"] floating enable
+for_window [class="plasmashell" window_type="notification"] border none, move right 800 px, move up 400 px
+for_window [title="YouTube Music"] floating enable, resize set 500 px 900 px, move position center
+no_focus [class="plasmashell" window_type="notification"]
+
 
 
 ####################################################################
 #   Open applications on exacly workspace
 ####################################################################
-assign [instance="whatsapp"]   $ws9
-assign [instance="discord"]    $ws9
+assign [title="*WhatsApp"]   $ws9
+assign [instance="whatsdesk"]   $ws9
+assign [instance="discord"]     $ws9
 
 
 ####################################################################
 #   Exit mode
 ####################################################################
 
-set $mode_system [L]OCK LOG[O]UT [R]EBOOT [P]OWEROFF
+ set $mode_system [L]OCK LOG[O]UT [R]EBOOT [P]OWEROFF
 
-mode "$mode_system" {
-    bindsym l exec $psst ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    bindsym o exec $psst ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym r exec $psst ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    bindsym p exec $psst ~/.config/i3/scripts/i3exit.sh poweroff, mode "default"
+ mode "$mode_system" {
+     bindsym l exec $psst ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+     bindsym o exec $psst ~/.config/i3/scripts/i3exit.sh logout, mode "default"
+     bindsym r exec $psst ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
+     bindsym p exec $psst ~/.config/i3/scripts/i3exit.sh poweroff, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+     # back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+ }
 
-bindsym Ctrl+$mod+Delete mode "$mode_system"
+#bindsym Ctrl+$mod+Delete mode "$mode_system"
+bindsym $mod+Shift+Delete exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 
 ####################################################################
-#  Launch favorite programs 
+#  Colors
 ####################################################################
 
-bindsym $mod+Shift+e exec $psst /usr/bin/nvim-qt
+# class                       border  backgr. text    indicator child_border
+#client.focused                #f5535c #aa3941 #ffffff #ffffff   #aa3941
+
