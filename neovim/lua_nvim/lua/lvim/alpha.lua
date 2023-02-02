@@ -13,7 +13,7 @@ dashboard.section.header.val = {
 	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
-	dashboard.button("p", "  Projects", ":Telescope projects theme=dropdown<CR>"),
+	dashboard.button("p", "  Projects", ":Telescope projects<CR>"),
 	dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
 	dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep<CR>"),
@@ -23,7 +23,7 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
-	return "codeloggers.com"
+	return "André Matias"
 end
 
 dashboard.section.footer.val = footer()
