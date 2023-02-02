@@ -17,3 +17,4 @@ require "lvim.comments"
 require "lvim.telescope"
 require "lvim.project"
 
+require "lvim.buffline"
