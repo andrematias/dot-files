@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained",
+  ensure_installed = { "json", "python", "php", "lua", "c" },
   sync_install = false,
   ignore_install = { "" },
   autopairs = {
