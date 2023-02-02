@@ -70,5 +70,6 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   use "moll/vim-bbye"
   use 'ishan9299/modus-theme-vim'
+  use 'rcarriga/nvim-notify'
 
 end)
