@@ -46,12 +46,10 @@ local function switch_konsole_profile(profile)
 end
 
 local current_hour = tonumber(os.date("%H", os.time()))
-if current_hour > 18 then
+if not (current_hour >= 7 and current_hour <= 18) then
   vim.cmd("set background=dark")
   vim.cmd("colorscheme " ..NVIM_DARK_THEME)
-
   switch_konsole_profile("Dark Grid Transparent")
-
 else
   vim.cmd("set background=light")
   vim.cmd("colorscheme " .. NVIM_LIGTH_THEME)
