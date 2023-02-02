@@ -18,3 +18,4 @@ require "lvim.telescope"
 require "lvim.project"
 
 require "lvim.buffline"
+require "lvim.true-zen"

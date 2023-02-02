@@ -35,7 +35,7 @@ return packer.startup(function(use)
   use 'lewis6991/impatient.nvim'
   use "nvim-lua/plenary.nvim"
   use "wbthomason/packer.nvim"
-  use "junegunn/goyo.vim"
+  use "Pocco81/true-zen.nvim"
   use "tpope/vim-fugitive"
   use "numToStr/Comment.nvim"
   use "JoosepAlviste/nvim-ts-context-commentstring"

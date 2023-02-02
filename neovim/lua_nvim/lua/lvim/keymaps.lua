@@ -42,6 +42,15 @@ if has_toggleterm then
   )
 end
 
+--To true-zen
+local has_true_zen, truezen = pcall(require, "true-zen")
+if has_true_zen then
+    keymap("n", "<leader>zn", ":TZNarrow<CR>", opts)
+    keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", opts)
+    keymap("n", "<leader>zf", ":TZFocus<CR>", opts)
+    keymap("n", "<leader>zm", ":TZMinimalist<CR>", opts)
+    keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
+end
 
 -- To windows navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
