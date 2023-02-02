@@ -19,3 +19,4 @@ require "lvim.project"
 
 require "lvim.buffline"
 require "lvim.true-zen"
+require "lvim.neovide"
