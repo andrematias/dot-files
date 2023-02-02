@@ -5,6 +5,19 @@ vim.g.modus_dim_inactive_window = 0
 
 
 local function switch_konsole_profile(profile)
+  local handler_which = io.popen("which konsole")
+  if handler_which and string.match(handler_which:read("a"), "*/bin/konsole")  then
+    local message = [[
+      O emulador de terminal instalado não é o KDE Konsole.
+      Não será possível aplicar o perfil correto ao terminal.
+    ]]
+    vim.notify(message, vim.log.levels.WARN, {
+      title = "KDE Konsole not found",
+      timeout = 10000
+    })
+    return
+  end
+
   local pipe = "|"
   local get_window_focus = "`xdotool getwindowfocus`"
   local get_window_focus_prop = "xprop -id " .. get_window_focus
