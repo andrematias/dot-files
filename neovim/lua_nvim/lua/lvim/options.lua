@@ -1,12 +1,13 @@
 -- Use :help options to see all options :)
 
 local options = {
+  laststatus = 0,
+  cmdheight = 0,
+  showtabline = 0,
   fileencoding = "utf-8",
-  textwidth = 75,
   shiftwidth = 4,
   tabstop = 4,
   expandtab = true,
-  cmdheight = 1,
   swapfile = false,
   undofile = true,
   timeoutlen = 1000,
@@ -26,7 +27,6 @@ local options = {
   sidescrolloff = 8,
   mouse = "a",
   showmode = false,
-  showtabline = 0,
   pumheight = 10,
   hlsearch = true,
   splitbelow = true,
@@ -36,8 +36,12 @@ local options = {
   background = "dark",
   spell = false,
   spelllang = "pt,en",
-  guifont = "Fira Code:h12",
-  readonly = false
+  guifont = "FiraCode NF:h10",
+  readonly = false,
+  linebreak = true,
+  showbreak = '  ',
+  textwidth = 100,
+  showmatch = true,
 }
 
 -- Let's iterate this options
@@ -47,7 +51,7 @@ end
 
 -- Some things doesn't go well with for loop
 vim.opt.shortmess:append "c"
-
+vim.wo.colorcolumn = '100'
 
 -- Legacy vim script
 vim.cmd "set whichwrap+=<,>,[,],h,l"
