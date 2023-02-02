@@ -69,5 +69,6 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
   use "ahmedkhalf/project.nvim"
   use "moll/vim-bbye"
+  use 'ishan9299/modus-theme-vim'
 
 end)
